@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<heade>
+	<meta charset="UTF-8">
+	<title>Register</title>
+</head>
+<body>
+	<h1> Register <h1>
+	<a href = "{% url 'first:MainPage' %}">back to MainPage</a>
+	
+	{% if registList.errors %}
+		<p>{{ registList.errors }}</p>
+	{% endif %}
+
+	<form action = "" method = "POST">
+		{% csrf_token %}
+		{{ registList.as_p }}
+		<button type = "submit">Register</button>
+	</form>
+</body>
+</html>
